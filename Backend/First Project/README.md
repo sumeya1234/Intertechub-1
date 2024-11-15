@@ -18,36 +18,46 @@ To get started with the project, follow these steps:
 git clone https://github.com/sumeya1234/Intertechub-1.git
 ```
 - Navigate into the project directory:
-
+```bash
 cd First-Project
-
+```
 - Install the necessary dependencies:
-
+```bash
 npm install
-
+```
 ## Usage
-To run the application, use the following command:
-npm start
+To run the application, use the following command: 
+```bash 
+npm start 
+```
 
 The server will start on port 5000, and you can access it at [http://localhost:5000]
 
 ## Routes
 The application includes the following routes:
 
-GET / - Returns a welcome message.
-GET /name - Returns the name of the user.
-GET /dream - Returns an inspirational message about dreams.
-GET /hobby - Returns a description of the user's favorite hobby.
+GET / - Returns a welcome message.  
+
+GET /name - Returns the name of the user.  
+
+GET /dream - Returns an inspirational message about dreams.  
+
+GET /hobby - Returns a description of the user's favorite hobby.  
+
 
 ## Dependencies
-This project uses the following npm packages:
+This project uses the following npm packages:  
 
-express: A minimal and flexible Node.js web application framework.
-http-status-codes: A library for working with HTTP status codes in a more readable and maintainable way.
-To install these dependencies, simply run:
+express: A minimal and flexible Node.js web application framework.  
 
+
+http-status-codes: A library for working with HTTP status codes in a more readable and maintainable way.  
+
+- To install these dependencies, simply run:
+```bash
 npm install
-Author
+```
+## Author
 Sumeya Muhidin https://github.com/sumeya1234
 
 ## License
