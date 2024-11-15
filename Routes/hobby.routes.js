@@ -3,6 +3,6 @@ const { getHobby } = require("../Controllers/hobby.controller")
 
 const router = express.Router();
 
-router.get('/name', getHobby);
+router.get('/hobby', getHobby);
 
 module.exports = router;
