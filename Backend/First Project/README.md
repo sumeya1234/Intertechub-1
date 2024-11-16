@@ -19,7 +19,7 @@ git clone https://github.com/sumeya1234/Intertechub-1.git
 ```
 - Navigate into the project directory:
 ```bash
-cd First-Project
+cd First Project
 ```
 - Install the necessary dependencies:
 ```bash
