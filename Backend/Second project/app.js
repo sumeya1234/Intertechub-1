@@ -1,18 +1,19 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 require("dotenv").config(); 
-const db = require("./Database/db.config"); 
-const installRoutes = require("./Routes/install.routes"); 
-const bookRoutes = require("./Routes/book.routes"); 
+
+const dbConnection = require("./Database/db.config"); // Import database connection
+const installRoutes = require("./Routes/install.routes"); // Install route
+const bookRoutes = require("./Routes/book.routes"); // Book routes
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(bodyParser.json()); 
+app.use(bodyParser.json()); // Parse incoming JSON requests
 
 // Test Database Connection
-db.query("SELECT 1")
+dbConnection.query("SELECT 1")
   .then(() => {
     console.log("Database connected successfully!");
   })
@@ -21,10 +22,10 @@ db.query("SELECT 1")
   });
 
 // Routes
-app.use("/api/install", installRoutes); // Route to install database tables
-app.use("/api/books", bookRoutes);     // Routes for books collection
+app.use("/api/install", installRoutes); 
+app.use("/api/books", bookRoutes); 
 
-// 404 Handler
+
 app.use((req, res) => {
   res.status(404).json({ error: "Route not found" });
 });

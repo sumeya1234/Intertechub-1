@@ -1,6 +1,6 @@
-const db = require('../Database/db.config');
+const dbConnection = require('../Database/db.config'); 
 
-async function installTables (req, res){
+async function installTables(req, res) {
   try {
     // SQL command to create the `books` table
     const createBooksTableQuery = `
@@ -15,13 +15,16 @@ async function installTables (req, res){
     `;
 
     // Execute the SQL command
-    await db.query(createBooksTableQuery);
+    const [result] = await dbConnection.query(createBooksTableQuery);
+
+    // Validate the result if necessary
+    console.log('Table creation result:', result);
 
     res.status(200).json({ message: 'Database tables installed successfully!' });
   } catch (error) {
-    console.error('Error installing tables:', error);
+    console.error('Error installing tables:', error.message);
     res.status(500).json({ error: 'Failed to install database tables.' });
   }
-};
+}
 
 module.exports = { installTables };

@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const installController = require('../Controllers/install.controller');
+const { installTables } = require("../Controllers/install.controller"); // Import the install controller
 
-// Route to install the tables
-router.post('/install', installController.installTables);
+// Route to install database tables
+router.post("/", installTables);
 
 module.exports = router;
